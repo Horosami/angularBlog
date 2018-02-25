@@ -53,6 +53,13 @@ module.exports = (sequelize, Sequelize) => {
             }
         });
 
+        Post.belongsTo(models.category, {
+            onDelete: 'CASCADE',
+            foreignKey: {
+                allowNull: false
+            }
+        });
+
         Post.hasMany(models.comment);
 
         Post.hasMany(models.tagsinpost);

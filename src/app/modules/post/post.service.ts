@@ -1,10 +1,11 @@
-import { Injectable }              from '@angular/core';
-import { Observable }              from 'rxjs/observable';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/observable';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Subject }                 from 'rxjs/Subject';
+import { Subject } from 'rxjs/Subject';
 
-import { Post }                    from './../../shared/models/post';
-import { Tag }                     from './../../shared/models/tag';
+import { Post } from './../../shared/models/post';
+import { Tag } from './../../shared/models/tag';
+import { Category } from './../../shared/models/category';
 
 const httpOptions = {
     headers: new HttpHeaders({
@@ -16,6 +17,7 @@ const httpOptions = {
 export class PostService {
     private postsUrl = 'http://localhost:3000/posts';
     private tagsUrl = 'http://localhost:3000/tags';
+    private categoriesUrl = 'http://localhost:3000/categories';
 
     private posts = new Subject<Post[]>();
     public posts$ = this.posts.asObservable();
@@ -75,5 +77,10 @@ export class PostService {
                 this.posts.next(posts['rows']);
             });
         return this.posts;
+    }
+
+    getCategories(): Observable<Category[]> {
+        const url = `${this.categoriesUrl}`;
+        return this.http.get<Category[]>(url, httpOptions);
     }
 }

@@ -2,7 +2,6 @@ const express = require('express');
 const app     = express();
 const router  = express.Router();
 
-const config        = require('../middleware/token');
 const models        = require('../../models');
 const baseFunctions = require('./base');
 

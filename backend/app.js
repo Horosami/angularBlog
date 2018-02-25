@@ -7,6 +7,7 @@ const users      = require('./http/controllers/user');
 const tags       = require('./http/controllers/tag');
 const posts      = require('./http/controllers/post');
 const comments   = require('./http/controllers/comment');
+const categories = require('./http/controllers/category');
 
 const port       = process.env.PORT || 3000;
 const app        = express();
@@ -23,6 +24,7 @@ app.use('/users', users);
 app.use('/tags', tags);
 app.use('/posts', posts);
 app.use('/comments', comments);
+app.use('/categories', categories);
 
 app.use(logger('dev'));
 

@@ -2,7 +2,6 @@ const express = require('express');
 const app     = express();
 const router  = express.Router();
 
-const config        = require('../middleware/token');
 const models        = require('../../models');
 const baseFunctions = require('./base');
 
@@ -17,6 +16,7 @@ router.get('', (req, res) => {
         attributes: Object.keys(models.post.attributes).concat([
             [sequelize.literal('(SELECT COUNT(*) FROM comments WHERE comments.postId = post.id)'), 'comments']
         ]),
+        include: [ { model: models.category, attributes: [ 'name' ] } ],
         order: [ ['dateCreate', 'DESC'] ],
         limit: Number(req.query.limit) || 5000,
         offset: Number(req.query.offset) || 0
@@ -34,7 +34,7 @@ router.get('', (req, res) => {
 
 router.post('', (req, res) => {
     const post = req.body;
-
+    console.log('post', post);
     models.post.create(post)
         .then((insertedPost) => {
             baseFunctions.addTags(post.tags, (addedTags) => {

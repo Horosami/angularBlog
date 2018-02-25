@@ -20,6 +20,13 @@
                             <mat-error *ngIf="form.controls['subtitle'].errors">Subtitle is required</mat-error>
                         </mat-form-field>
                         <mat-form-field class="form-input-long">
+                            <mat-select placeholder="Category" formControlName="category">
+                              <mat-option *ngFor="let category of categories" [value]="category.id">
+                                {{ category.name }}
+                              </mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        <mat-form-field class="form-input-long">
                             <textarea matInput formControlName="text" placeholder="Post Text" required tabindex="3" matTextareaAutosize matAutosizeMinRows="8" matAutosizeMaxRows="50" wrap="soft" [value]="post.text"></textarea>
                             <mat-error *ngIf="form.controls['text'].errors">Text is required</mat-error>
                         </mat-form-field>
