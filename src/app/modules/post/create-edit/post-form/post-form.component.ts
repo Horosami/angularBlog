@@ -1,18 +1,19 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { EventEmitter, Output }     from '@angular/core';
-import { MatChipInputEvent }        from '@angular/material';
-import { ENTER, COMMA }             from '@angular/cdk/keycodes';
-import { FormControl, Validators }  from '@angular/forms';
-import { FormGroup }                from '@angular/forms';
-import { MatDialog }                from '@angular/material';
-import { Location }                 from '@angular/common';
-import { Router }                   from '@angular/router';
+import { EventEmitter, Output } from '@angular/core';
+import { MatChipInputEvent } from '@angular/material';
+import { ENTER, COMMA } from '@angular/cdk/keycodes';
+import { FormControl, Validators } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material';
+import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
-import { AuthService }              from './../../../../modules/authorization/auth.service';
-import { PostService }              from '../../post.service';
-import { Post }                     from './../../../../shared/models/post';
-import { DeleteComponent }          from './../../delete/delete.component';
-import { patternValidator }         from './pattern-validator';
+import { AuthService } from './../../../../modules/authorization/auth.service';
+import { PostService } from '../../post.service';
+import { Post } from './../../../../shared/models/post';
+import { Category } from './../../../../shared/models/category';
+import { DeleteComponent } from './../../delete/delete.component';
+import { patternValidator } from './pattern-validator';
 
 @Component({
     selector: 'app-post-form',
@@ -38,6 +39,8 @@ export class PostFormComponent implements OnInit {
 
     private excerptLength: number = 50;
 
+    public categories: Array<Category>;
+
     constructor(
         private authService: AuthService,
         private postService: PostService,
@@ -48,14 +51,17 @@ export class PostFormComponent implements OnInit {
 
     ngOnInit() {
         this.createForm();
+        this.postService.getCategories()
+            .subscribe(categories => this.categories = categories);
     }
 
     createForm() {
         this.form = new FormGroup({
-            title: new FormControl('', [Validators.required]),
-            subtitle: new FormControl('', [Validators.required]),
-            text: new FormControl('', [Validators.required]),
-            tags: new FormControl([], Validators.required)
+            title: new FormControl('', Validators.required),
+            subtitle: new FormControl('', Validators.required),
+            text: new FormControl('', Validators.required),
+            tags: new FormControl([], Validators.required),
+            category: new FormControl('', Validators.required)
         });
     }
 
@@ -104,6 +110,7 @@ export class PostFormComponent implements OnInit {
         this.post.title = this.form.value.title;
         this.post.subtitle = this.form.value.subtitle;
         this.post.text = this.form.value.text;
+        this.post.categoryId = this.form.value.category;
         this.post.excerpt = this.post.text.split(/\s+/).slice(0, this.excerptLength).join(' ');
     }
 

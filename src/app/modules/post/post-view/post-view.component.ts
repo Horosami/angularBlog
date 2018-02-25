@@ -1,12 +1,12 @@
-import { Component, OnInit }   from '@angular/core';
-import { OnDestroy }           from '@angular/core/src/metadata/lifecycle_hooks';
-import { ActivatedRoute }      from '@angular/router';
-import { Subscription }        from 'rxjs/Subscription';
+import { Component, OnInit } from '@angular/core';
+import { OnDestroy } from '@angular/core/src/metadata/lifecycle_hooks';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
 
-import { User }                from './../../../shared/models/user';
-import { AuthService }         from './../../../modules/authorization/auth.service';
-import { Post }                from './../../../shared/models/post';
-import { PostService }         from './../post.service';
+import { User } from './../../../shared/models/user';
+import { AuthService } from './../../../modules/authorization/auth.service';
+import { Post } from './../../../shared/models/post';
+import { PostService } from './../post.service';
 
 @Component({
     selector: 'app-post-view',
