@@ -1,0 +1,38 @@
+.block-card-over-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.block-card-over-img img {
+    max-width: 100%;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all .3s ease;
+}
+
+.block-card-over-img img:hover {
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: all .3s ease;
+}
+
+.sub-text {
+    background-color: white;
+    text-align: justify;
+    padding: 10px;
+    margin: -30px 15px 15px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+hr {
+    margin-top: 0;
+    margin-bottom: 15px;
+    margin-left: 0;
+    width: 20%;
+    border-top: 1px solid #673ab7;
+}

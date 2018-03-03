@@ -61,6 +61,21 @@ import { RelativeDatePipe } from './shared/pipes/relative-date.pipe';
 import { DateSuffixPipe } from './shared/pipes/date-suffix.pipe';
 import { ShortenExcerptPipe } from './shared/pipes/shorten-excerpt.pipe';
 
+// новые компоненты для создания превью постов ДОБАВИТЬ В ОТДЕЛЬНЫЙ МОДУЛЬ ОБЯЗАТЕЛЬНО
+// превью постов
+import { PostImgComponent } from './modules/post/post-previews/post-img/post-img.component';
+import { PostImgBlockComponent } from './modules/post/post-previews/post-img-block/post-img-block.component';
+import { PostImgTextComponent } from './modules/post/post-previews/post-img-text/post-img-text.component';
+import { PostLeftImgTextComponent } from './modules/post/post-previews/post-left-img-text/post-left-img-text.component';
+
+// категории на главной странице
+import { ProgrammingComponent } from './pages/index/categories/programming/programming.component';
+import { WebsiteDevComponent } from './pages/index/categories/website-dev/website-dev.component';
+import { GameDevComponent } from './pages/index/categories/game-dev/game-dev.component';
+import { CareerInITComponent } from './pages/index/categories/career-in-it/career-in-it.component';
+import { InterfacesComponent } from './pages/index/categories/interfaces/interfaces.component';
+import { LatestPostsComponent } from './pages/index/categories/latest-posts/latest-posts.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -92,6 +107,21 @@ import { ShortenExcerptPipe } from './shared/pipes/shorten-excerpt.pipe';
     FirstAdComponent,
     AdBannerComponent,
     AdDirective,
+
+    // новые компоненты потом перенести в другой модуль
+    PostImgComponent,
+    PostImgBlockComponent,
+    PostImgTextComponent,
+    PostLeftImgTextComponent,
+
+    // категори перенести
+    ProgrammingComponent,
+    WebsiteDevComponent,
+    GameDevComponent,
+    CareerInITComponent,
+    InterfacesComponent,
+    LatestPostsComponent,
+
     NotFoundComponent
   ],
   entryComponents: [
