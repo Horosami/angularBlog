@@ -12,7 +12,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { MatInputModule } from '@angular/material';
 import { MatPaginatorModule, MatRadioModule } from '@angular/material';
-import { MatIconModule, MatChipsModule } from '@angular/material';
+import { MatIconModule, MatChipsModule, MatTooltipModule } from '@angular/material';
 import { DatePipe } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -113,7 +113,8 @@ import { ShortenExcerptPipe } from './shared/pipes/shorten-excerpt.pipe';
     MatChipsModule,
     MatPaginatorModule,
     GoTopButtonModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTooltipModule
   ],
   providers: [
     AuthService,

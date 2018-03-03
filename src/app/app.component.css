@@ -53,3 +53,14 @@ ul.left-social li a:hover {
     /* Chrome, Safari, Opera */
     transform: scale(1.1);
 }
+
+.navbar-brand {
+    padding: 7px;
+    margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-brand {
+        margin-left: 20px;
+    }
+}
