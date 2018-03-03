@@ -231,6 +231,8 @@ h2.title {
     margin-bottom: 20px;
 }
 .header-title {
+    margin-top: 30px;
+    margin-bottom: 15px;
     position: relative;
 }
 .header-title:before {
@@ -293,3 +295,92 @@ hr {
 .category-name {
     padding-left: 10px;
 }
+
+/*заголовки цвета*/
+.header-title-web:before {
+    background: rgb(29, 179, 42);
+}
+h2.title-web {
+    background: rgb(29, 179, 42);
+    border-color: rgb(29, 179, 42);
+}
+.website-posts hr {
+    border-top: 1px solid rgb(29, 179, 42);
+}
+
+
+.header-title-game:before  {
+    background: rgb(20, 33, 151);
+}
+
+h2.title-game {
+    background: rgb(20, 33, 151);
+    border-color: rgb(20, 33, 151);
+}
+
+
+.header-title-career-it:before {
+    background: rgb(217,51,234);
+}
+
+h2.title-career-it {
+    background: rgb(217,51,234);
+    border-color: rgb(217,51,234);
+}
+
+.career-it-posts hr {
+    border-top: 1px solid rgb(217,51,234);
+}
+
+
+.header-title-interfaces:before {
+    background: rgb(53,23,106);
+}
+
+h2.title-interfaces {
+    background: rgb(53,23,106);
+    border-color: rgb(53,23,106);
+}
+
+.interfaces-posts hr {
+    border-top: 1px solid rgb(53,23,106);
+}
+
+
+/*more popular*/
+h3.more-popular-numb {
+    font-size: 36px;
+    color: #673ab7;
+}
+h2.more-popular-title {
+    font-size: 22px;
+}
+
+
+/*top 10 tags*/
+.mat-chip:not(.mat-basic-chip)+.mat-chip:not(.mat-basic-chip) {
+    margin: 8px;
+}
+
+/*quiz*/
+.example-radio-group {
+    display: inline-flex;
+    flex-direction: column;
+}
+
+.example-radio-button {
+    margin: 5px;
+}
+
+.example-selected-value {
+    margin: 15px 0;
+}
+
+/*social*/
+.mat-mini-fab .mat-button-wrapper {
+    padding: 0;
+}
+.mat-mini-fab .mat-button-wrapper i.fa {
+    font-size: 14px;
+}
+  
