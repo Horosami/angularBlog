@@ -1,12 +1,12 @@
-import { Component, OnInit, OnDestroy }             from '@angular/core';
-import { Inject }                                   from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Inject } from '@angular/core';
 
-import { Subscription }                             from 'rxjs/Subscription';
+import { Subscription } from 'rxjs/Subscription';
 
-import { AuthService }                              from './modules/authorization/auth.service';
-import { User }                                     from './shared/models/user';
-import { LoginComponent }                           from './modules/authorization/login/login.component';
-import { SignupComponent }                          from './modules/authorization/signup/signup.component';
+import { AuthService } from './modules/authorization/auth.service';
+import { User } from './shared/models/user';
+import { LoginComponent } from './modules/authorization/login/login.component';
+import { SignupComponent } from './modules/authorization/signup/signup.component';
 
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
