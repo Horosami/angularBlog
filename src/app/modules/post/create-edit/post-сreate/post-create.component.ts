@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DatePipe }                 from '@angular/common';
-import { Router }                   from '@angular/router';
-import { Observable }               from 'rxjs/observable';
+import { DatePipe } from '@angular/common';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs/observable';
 
-import { Post }                     from './../../../../shared/models/post';
-import { PostService }              from './../../post.service';
-import { ComponentCanDeactivate }   from './../../../../shared/guards/save-data.guard';
+import { Post } from './../../../../shared/models/post';
+import { PostService } from './../../post.service';
+import { ComponentCanDeactivate } from './../../../../shared/guards/save-data.guard';
 
 @Component({
     selector: 'app-post-create',

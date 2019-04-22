@@ -10,6 +10,7 @@ export class Post {
     author: string;
     userId: number;
     comments: number;
+    categoryId: number;
 
     constructor (
         id: number = 0,
@@ -19,7 +20,9 @@ export class Post {
         tags: string[] = [],
         author: string = '',
         userId: number = 0,
-        comments: number = 0) {
+        comments: number = 0,
+        categoryId: number = 0
+    ) {
         this.id = id;
         this.title = title;
         this.subtitle = subtitle;
@@ -28,5 +31,6 @@ export class Post {
         this.author = author;
         this.userId = userId;
         this.comments = comments;
+        this.categoryId = categoryId;
     }
 }
